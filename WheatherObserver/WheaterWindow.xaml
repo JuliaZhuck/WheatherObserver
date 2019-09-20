@@ -1,0 +1,20 @@
+﻿<Window x:Class="WheatherObserver.WheaterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WheatherObserver"
+        mc:Ignorable="d"
+        Title="WheaterWindow" Height="550" Width="350" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+        <Image   Margin="0,0,0,0" x:Name="wheatherImg" Stretch="Fill" 
+           Source="{Binding WheatherImage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="wheatherText"  FontSize="24" FontWeight="Bold"
+                   Foreground="Yellow" Text="{Binding Path=WheatherType, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <TextBlock x:Name="temperatureText" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"
+                   Foreground="Yellow" 
+             Text ="{Binding Path=Temperature, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+        </StackPanel>
+    </Grid>
+</Window>
